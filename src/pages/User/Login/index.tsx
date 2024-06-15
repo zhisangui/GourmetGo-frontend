@@ -122,8 +122,8 @@ const Login: React.FC = () => {
             maxWidth: '75vw',
           }}
           logo={<img alt="logo" src={SYSTEM_LOGO}/>}
-          title="编程导航知识星球"
-          subTitle={<a href={GUIDE_LINK} target={"_blank"} rel="noreferrer"> 最好的编程学习圈子 </a>}
+          title="美食即行"
+          subTitle={"一站式线上点餐平台，让您随时随地轻松享用美味！"}
           initialValues={{
             autoLogin: true,
           }}
@@ -164,7 +164,7 @@ const Login: React.FC = () => {
                 ]}
               />
               <ProFormText.Password
-                name="userPassword"
+                name="password"
                 fieldProps={{
                   size: 'large',
                   prefix: <LockOutlined/>,

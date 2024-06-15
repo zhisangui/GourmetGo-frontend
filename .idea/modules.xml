@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/usercenter.iml" filepath="$PROJECT_DIR$/.idea/usercenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/GourmetGo.iml" filepath="$PROJECT_DIR$/.idea/GourmetGo.iml" />
     </modules>
   </component>
 </project>

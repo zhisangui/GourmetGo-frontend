@@ -49,6 +49,87 @@ export async function register(body: API.RegisterParams, options?: { [key: strin
   });
 }
 
+/** 搜索菜品 GET /api/dish/search*/
+export async function searchDishes(options?: { [key: string]: any }) {
+  return request<API.BaseResponse<API.CurrentDish[]>>('/api/dish/search', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
+/** 更新菜品 Post /api/dish/update */
+export async function updateDish(body: API.CurrentDish, options?: { [key: string]: any }) {
+  return request<API.BaseResponse<API.CurrentDish>>('/api/dish/update', {
+    method: 'Post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+
+/** 删除菜品 Post /api/dish/delete*/
+export async function deleteDish(body: API.CurrentDish, options?: { [key: string]: any }) {
+  return request<API.BaseResponse<API.DeleteDishResult>>('/api/dish/delete', {
+    method: 'Post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** 用户下单 Post /api/dish/order */
+export async function order(body: API.CurrentDish[], options?: { [key: string]: any }) {
+  return request<API.BaseResponse<API.OrderResult>>('/api/dish/order', {
+    method: 'Post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}
+
+/** 搜索订单 GET /api/order/search*/
+export async function searchOrders(options?: { [key: string]: any }) {
+  return request<API.BaseResponse<API.OrderInfo[]>>('/api/order/search', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
+/** 获取当前订单的所有菜品 POST /api/detail/getDishesByOrderId */
+export async function getDishesByOrderId(body: number, options?: { [key: string]: any }) {
+  return request<API.BaseResponse<API.CurrentDish[]>>('/api/detail/getDish', {
+    method: 'GET',
+    params: {
+      orderId: body,
+    },
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    ...(options || {}),
+  });
+}
+
+/** 更新订单 Get /api/order/update */
+export async function updateOrder(body: API.UpdateOrderParam, options?: { [key: string]: any }) {
+  return request<API.BaseResponse<API.OrderInfo>>('/api/order/update', {
+    method: 'Get',
+    params: {
+      id: body.id,
+      status: body.status,
+    },
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    ...(options || {}),
+  });
+}
 
 /** 此处后端没有提供注释 GET /api/notices */
 export async function getNotices(options?: { [key: string]: any }) {

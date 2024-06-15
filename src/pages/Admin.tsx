@@ -5,10 +5,10 @@ import { Alert, Card, Typography } from 'antd';
 import React from 'react';
 const Admin: React.FC = () => {
   return (
-    <PageContainer content={' 这个页面只有 admin 权限才能查看'}>
+    <PageContainer content={' 商家管理后台 '}>
       <Card>
         <Alert
-          message={'更快更强的重型组件，已经发布。'}
+          message={'美食即兴，畅享不停！'}
           type="success"
           showIcon
           banner
@@ -23,7 +23,7 @@ const Admin: React.FC = () => {
             textAlign: 'center',
           }}
         >
-          <SmileTwoTone /> Ant Design Pro <HeartTwoTone twoToneColor="#eb2f96" /> You
+          <SmileTwoTone /> 美食 <HeartTwoTone twoToneColor="#eb2f96" /> 即行
         </Typography.Title>
       </Card>
       <p

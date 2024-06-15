@@ -53,8 +53,8 @@ const Register: React.FC = () => {
   const [type, setType] = useState<string>('account');
   const {styles} = useStyles();
   const handleSubmit = async (values: API.RegisterParams) => {
-    const {userPassword, checkPassword} = values;
-    if (userPassword !== checkPassword) {
+    const {password, checkPassword} = values;
+    if (password !== checkPassword) {
       message.error("两次输入的密码不一致");
       return;
     }
@@ -120,8 +120,8 @@ const Register: React.FC = () => {
           }}
           submitter={{searchConfig: {submitText: '注册'}}}
           logo={<img alt="logo" src={SYSTEM_LOGO}/>}
-          title="编程导航知识星球"
-          subTitle={<a href={GUIDE_LINK} target={"_blank"} rel="noreferrer"> 最好的编程学习圈子 </a>}
+          title="美食即行"
+          subTitle={"一站式线上点餐平台，让您随时随地轻松享用美味！"}
           initialValues={{
             autoLogin: true,
           }}
@@ -159,7 +159,7 @@ const Register: React.FC = () => {
                 ]}
               />
               <ProFormText.Password
-                name="userPassword"
+                name="password"
                 fieldProps={{
                   size: 'large',
                   prefix: <LockOutlined/>,

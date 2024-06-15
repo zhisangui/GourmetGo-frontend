@@ -3,17 +3,27 @@
 
 declare namespace API {
   type CurrentUser = {
-    id?: nunber;
+    id: nunber;
     username?: string;
     userAccount?: string;
-    avatarUrl?: string;
-    gender?: number;
-    email?: string;
-    userStatus?: number;
-    phone?: string;
     createTime?: string;
     userRole?: number;
   };
+
+  type UpdateOrderParam = {
+    id?: number;
+    status?: number;
+  }
+
+  type CurrentDish = {
+    id?: number;
+    name?: string;
+    price?: number;
+    description?: string;
+    dishUrl?: string;
+    createTime: string;
+  }
+
 
   type LoginResult = {
     status?: string;
@@ -21,8 +31,20 @@ declare namespace API {
     currentAuthority?: string;
   };
 
- type RegisterResult = number
+  type RegisterResult = number
 
+  type DeleteDishResult = boolean;
+  type OrderResult = boolean;
+
+  type OrderInfo = {
+    id?: number;
+    username?: string;
+    totalAmount?: number;
+    orderTime?: string;
+    status?: number;
+    createTime?: string;
+    dishList?: CurrentDish[];
+  };
 
   type PageParams = {
     current?: number;
@@ -58,14 +80,14 @@ declare namespace API {
 
   type LoginParams = {
     userAccount?: string;
-    userPassword?: string;
+    password?: string;
     autoLogin?: boolean;
     type?: string;
   };
 
   type RegisterParams = {
     userAccount?: string;
-    userPassword?: string;
+    password?: string;
     checkPassword?: boolean;
     type?: string;
   };

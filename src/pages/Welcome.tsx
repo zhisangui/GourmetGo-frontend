@@ -1,7 +1,8 @@
 import { PageContainer } from '@ant-design/pro-components';
 import { useModel } from '@umijs/max';
-import { Card, theme } from 'antd';
+import {Card, theme, Typography} from 'antd';
 import React from 'react';
+import {HeartTwoTone, SmileTwoTone} from "@ant-design/icons";
 
 /**
  * 每个单独的卡片，为了复用样式抽成了组件
@@ -114,11 +115,19 @@ const Welcome: React.FC = () => {
               color: token.colorTextHeading,
             }}
           >
-            欢迎使用 Ant Design Pro
+              <Typography.Title
+                level={7}
+                style={{
+                  textAlign: 'center',
+                }}
+              >
+                <SmileTwoTone /> 美食即行 <HeartTwoTone twoToneColor="#eb2f96" /> 畅享不停
+              </Typography.Title>
+
           </div>
           <p
             style={{
-              fontSize: '14px',
+              fontSize: '16px',
               color: token.colorTextSecondary,
               lineHeight: '22px',
               marginTop: 16,
@@ -126,8 +135,7 @@ const Welcome: React.FC = () => {
               width: '65%',
             }}
           >
-            Ant Design Pro 是一个整合了 umi，Ant Design 和 ProComponents
-            的脚手架方案。致力于在设计规范和基础组件的基础上，继续向上构建，提炼出典型模板/业务组件/配套设计资源，进一步提升企业级中后台产品设计研发过程中的『用户』和『设计者』的体验。
+            欢迎使用《美食即行》——您的专属线上点餐平台！在这里，我们致力于为您提供便捷、高效的点餐体验。无论您身处何地，只需轻点几下，即可浏览丰富的菜品，选择心仪的美食。我们的平台不仅支持快速登录注册，还为您提供个性化的推荐和优质的配送服务。
           </p>
           <div
             style={{
@@ -136,7 +144,7 @@ const Welcome: React.FC = () => {
               gap: 16,
             }}
           >
-            <InfoCard
+            {/*<InfoCard  todo
               index={1}
               href="https://umijs.org/docs/introduce/introduce"
               title="了解 umi"
@@ -153,7 +161,7 @@ const Welcome: React.FC = () => {
               title="了解 Pro Components"
               href="https://procomponents.ant.design"
               desc="ProComponents 是一个基于 Ant Design 做了更高抽象的模板组件，以 一个组件就是一个页面为开发理念，为中后台开发带来更好的体验。"
-            />
+            />*/}
           </div>
         </div>
       </Card>
